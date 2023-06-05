@@ -1,0 +1,116 @@
+.recipe-container {
+  width: 60%;
+  font-size: 2rem;
+}
+
+.recipe-span {
+  width: 50%;
+  margin: 1.5em auto;
+  text-align: center;
+}
+
+.recipe-img {
+  height: 12em;
+}
+
+.recipe-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.recipe-title {
+  width: 100%;
+  margin: 0 auto;
+}
+.recipe-title h2 {
+  text-transform: uppercase;
+  background: var(--background-main);
+  text-align: center;
+}
+
+.recipe-description {
+  padding: 1.5em;
+}
+
+.recipe-time-servings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recipe-servings-box span {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.servings-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.servings-btn {
+  padding: 0;
+  margin-right: 0.5em;
+}
+.servings-btn i{
+  font-size: 1.8rem;
+  
+}
+.icon-btn {
+  cursor: pointer;
+}
+.icon-btn:hover {
+  opacity: 0.5;
+}
+.icon-btn:active {
+  scale: 0.9;
+}
+
+.recipe-bookmarked{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.add-bookmark-btn{
+  padding: 0;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.bookmarked-btn {
+  background-color: var(--basic-text);
+  font-size: 2.5rem;
+  border-radius: 2em;
+  padding: 0.5em;
+}
+
+.recipe-ingredients {
+  background: var(--light-color);
+  font-size: 1.9rem;
+  padding: 1.5em;
+}
+
+.recipe-ingredients-list {
+  column-count: 2;
+  column-width: auto;
+  line-height: 1.5;
+}
+
+.recipe-directions{
+    background-color: var(--background-second);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+}
+.directions-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 0.5em;
+    font-weight: bold;
+}

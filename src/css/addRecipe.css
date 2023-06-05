@@ -1,0 +1,150 @@
+.add-recipe-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rem;
+  background-color: var(--basic-text);
+  border-radius: 1.5em;
+
+  padding: 5em 6em;
+  box-shadow: 0 4em 6em var(--shadow);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 0.1em;
+  right: 0.5em;
+  font-size: 4.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  height: 0;
+}
+.btn--close-modal:hover {
+  opacity: 0.5;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--shadow);
+  backdrop-filter: blur(0.5em);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.upload {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4em 6em;
+}
+.upload__column {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  gap: 1em;
+}
+.upload__ingredients {
+  display: block;
+}
+
+.form-ingredients-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.7em;
+  gap: 0.5em;
+}
+
+.add-ingredient-btn{
+  padding: 0;
+  border-radius: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin: auto 50%;
+}
+
+.ingredient-item {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: space-evenly;
+  grid-template-columns: auto auto auto auto;
+  gap: 0.5em;
+}
+
+.ingredient-item input {
+  width: 10em;
+  font-family: inherit;
+  font-weight: bolder;
+}
+
+.upload__column label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.upload__column input,
+select {
+  font-size: 1.5rem;
+  padding: 0.8em 1em;
+  border: 1px solid var(--shadow);
+  border-radius: 0.5em;
+  transition: all 0.2s;
+}
+
+.quantity-input {
+  max-width: 6.5em;
+}
+
+.unit-select{
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  
+}
+
+.unit-select:focus{
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.upload__column input::placeholder {
+  color: gray;
+}
+
+.upload__column select:focus,
+.upload__column input:focus {
+  outline: none;
+  border: 0.1rem solid var(--main-color);
+  background-color: var(--light-color);
+}
+
+.upload__heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  grid-column: 1/-1;
+  color: var(--main-color);
+}
+
+.upload__btn {
+  grid-column: 1 / -1;
+  justify-self: center;
+}

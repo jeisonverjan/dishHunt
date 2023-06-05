@@ -1,0 +1,90 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.header-logo {
+  margin-left: 2em;
+}
+.header-logo span {
+  font-family: "Slackside One", cursive;
+}
+
+.header .fa-carrot {
+  background: var(--background-main);
+  padding: 0.3em;
+  border-radius: 50%;
+  color: var(--dark-color);
+}
+
+.header-form input,
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  border-radius: 5em;
+  font-family: inherit;
+  font-size: 1.6rem;
+  height: 3em;
+  padding: 0.5em;
+}
+.header-form input {
+  background-color: var(--light-color);
+  transition: box-shadow 0.5s;
+  width: 15em;
+}
+.main-btn {
+  background: var(--background-main);
+  cursor: pointer;
+  transition: transform 0.5s;
+  font-weight: bold;
+  width: 8em;
+  height: 3em;
+  border-radius: 5em;
+}
+.main-btn:hover {
+  transform: scale(1.1);
+}
+.header-form input:focus {
+  outline: none;
+  box-shadow: 0.1em 0.5em 0.5em -0.3em var(--shadow);
+}
+.header-nav {
+  position: relative;
+}
+.nav-list {
+  display: flex;
+}
+.header-nav li {
+  transition: background-color 0.5s;
+}
+.header-nav li:hover {
+  background-color: var(--shadow);
+}
+.nav-item-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 2em 1.5em;
+  display: grid;
+  place-content: center;
+  grid-template-columns: auto auto;
+  gap: 0.5em;
+}
+
+.bookmarks {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 120%;
+  right: 0;
+  top: 100%;
+  z-index: 1;
+  background-color: var(--basic-text);
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.nav-item-bookmark:hover .bookmarks {
+  opacity: 1;
+  visibility: visible;
+}

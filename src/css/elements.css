@@ -1,0 +1,89 @@
+/* Spinner */
+.spinner {
+  font-size: 3rem;
+  margin: 5em auto;
+  text-align: center;
+}
+.spinner i {
+  animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Alert box */
+
+/* The alert message box */
+.alert {
+  font-size: inherit;
+  padding: 1em;
+  font-size: 2.5rem;
+  color: var(--basic-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alert-error{
+  background-color: var(--danger); /* Red */
+}
+
+.alert-success{
+  background-color: var(--success);
+}
+/* The close button */
+.close-btn {
+  color: var(--basic-text);
+  font-weight: bold;
+  float: right;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.close-btn:hover {
+  color: var(--dark-color);
+}
+
+/* Pagination buttons */
+
+.pagination {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.pagination button {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: var(--shadow);
+  padding: 1.5em 2.5em;
+  font-weight: bold;
+  transition: filter 0.3s;
+}
+
+.pagination button:hover {
+  filter: brightness(.6);
+}
+
+.pagination-numpages{
+  font-weight: bolder;
+  color: var(--main-color);
+}
+
+.pagination-btn-next {
+  justify-self: end;
+  grid-column-start: 3;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Favicon Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS style -->
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <!-- FontAwesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&family=Roboto+Condensed&family=Rokkitt:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <!-- JS Script -->
+    <script defer type="module" src="./src/js/controller.js"></script>
+    <title>DishHunt</title>
+  </head>
+
+  <body>
+    <div id="app" class="main-container">
+      <header class="header">
+        <div class="header-logo">
+          <i class="fa-solid fa-carrot"></i>
+          <span>DishHunt</span>
+        </div>
+        <form action="" class="header-form">
+          <input
+            type="text"
+            id="search"
+            class="search-input"
+            placeholder="Search over 1M Recipes..."
+            autofocus
+          />
+          <button class="search-btn main-btn">
+            <i class="fa-brands fa-searchengin"></i>
+            <span>Search</span>
+          </button>
+        </form>
+        <nav class="header-nav">
+          <ul class="nav-list">
+            <li class="nav-item nav-item-recipe">
+              <button class="nav-item-btn add-recipe-btn">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span>Add Recipe</span>
+              </button>
+            </li>
+            <li class="nav-item nav-item-bookmark">
+              <button class="nav-item-btn bookmark-btn">
+                <i class="fa-solid fa-bookmark"></i>
+                <span>Bookmarks</span>
+              </button>
+              <div class="bookmarks">
+                <ul class="bookmarks-list list-flex">
+                  <!-- <li class="search-item">
+                    <a href="" class="search-item-link">
+                      <figure class="search-item-img">
+                        <img
+                          src="http://forkify-api.herokuapp.com/images/2650_MEDIUM0a50.jpg"
+                          alt=""
+                        />
+                      </figure>
+                      <div class="search-item-data">
+                        <h4 class="item-title">Chinese Rice</h4>
+                        <p class="item-publisher">BBC Good Food</p>
+                      </div>
+                    </a>
+                  </li> -->
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="content-container">
+        <div class="search-container">
+          <ul class="search-results-list list-flex">
+            <!-- <li class="search-item">
+              <a href="" class="search-item-link">
+                <figure class="search-item-img">
+                  <img src="http://forkify-api.herokuapp.com/images/2650_MEDIUM0a50.jpg" alt="">
+                </figure>
+                <div class="search-item-data">
+                  <h4 class="item-title">Chinese Rice</h4>
+                  <p class="item-publisher">BBC Good Food</p>
+                </div>
+              </a>
+            </li> -->
+          </ul>
+          <div class="pagination">
+            <!-- <button class="pagination-btn pagination-btn-prev">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <span>Page 1</span>
+            </button>
+            <button class="pagination-btn pagination-btn-next">
+              <span>Page 3</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button> -->
+          </div>
+        </div>
+        <div class="recipe-container">
+          <div class="recipe-span">
+            <i class="fa-regular fa-face-smile"></i> Start by searching for a
+            recipe or an ingredient. Have fun!
+          </div>
+
+          <!-- <div class="recipe-img">
+            <img
+              src="http://forkify-api.herokuapp.com/images/2650_MEDIUM0a50.jpg"
+              alt="recipe image"
+            />
+          </div>
+          <div class="recipe-header">
+            <div class="recipe-title">
+              <h2>Sheridan's cream sticky pudding</h2>
+            </div>
+            <div class="recipe-description">
+              <div class="recipe-time-servings">
+                <span class="recipe-time-box">
+                  <i class="fa-solid fa-clock"></i>
+                  <span class="recipe-time bold">50</span> MINUTES
+                </span>
+                <span class="recipe-servings-box">
+                  <span>
+                    <i class="fa-solid fa-user-group"></i>
+                    <span class="recipe-servings bold">4</span> SERVINGS
+                    <div class="servings-btns">
+                      <i class="fa-solid fa-person-circle-plus icon-btn"></i>
+                      <i class="fa-solid fa-person-circle-minus icon-btn"></i>
+                    </div>
+                  </span>
+                </span>
+                <i class="fa-solid fa-star icon-btn add-bookmark"></i>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-ingredients">
+            <h2>RECIPE INGREDIENTS</h2>
+            <ul class="recipe-ingredients-list">
+              <li class="recipe-ingredient">
+                <i class="fa-solid fa-check"></i>
+                <span class="quanity">50</span>
+                <span class="unit">g</span>
+                <span class="description">golden caster sugar</span>
+              </li>
+            </ul>
+          </div>
+          <div class="recipe-directions recipe-ingredients">
+            <h2>HOW TO COOK IT</h2>
+            <p>
+              This recipe was carefully designed and tested by
+              <span class="recipe-publisher bold">BBC Good Food.</span>
+              Please check out directions at their website.
+            </p>
+            <a
+              href="http://www.bbcgoodfood.com/recipes/2650/sheridans-cream-sticky-pudding"
+              class="main-btn directions-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Directions</span><i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <div class="add-recipe-window hidden">
+      <button class="btn--close-modal close-recipe-btn">&times;</button>
+      <form class="upload">
+        <div class="upload__column">
+          <h3 class="upload__heading">Recipe data</h3>
+          <label>Title</label>
+          <input required name="title" type="text" />
+          <label>URL</label>
+          <input required name="sourceUrl" type="text" />
+          <label>Image URL</label>
+          <input required name="image" type="text" />
+          <label>Publisher</label>
+          <input required name="publisher" type="text" />
+          <label>Prep time</label>
+          <input required name="cookingTime" type="number" />
+          <label>Servings</label>
+          <input required name="servings" type="number" />
+        </div>
+
+        <div class="upload__column upload__ingredients">
+          <h3 class="upload__heading">Ingredients</h3>
+          <div class="form-ingredients-container">
+            <div class="ingredient-item">
+              <input
+                class="quantity-input"
+                name="quantity[0]"
+                type="number"
+                placeholder="quantity"
+                step="any"
+                required
+                min="0.1"
+              />
+              <select name="unit[0]" id="" class="unit-select">
+                <option value="">Unit</option>
+                <option value="tsp">tsp</option>
+                <option value="tbsp">tbsp</option>
+                <option value="cup">cup</option>
+                <option value="oz">oz</option>
+                <option value="lb">lb</option>
+                <option value="g">g</option>
+                <option value="kg">kg</option>
+                <option value="ml">ml</option>
+                <option value="l">l</option>
+              </select>
+              <input
+                class="description-input"
+                name="description[0]"
+                type="text"
+                placeholder="description"
+                required
+              />
+              <button class="delete-ingredient">
+                <i class="fa-solid fa-trash-can icon-btn"></i>
+              </button>
+            </div>
+          </div>
+          <button class="add-ingredient-btn">
+            <i class="fa-solid fa-plus icon-btn"></i>
+          </button>
+        </div>
+        <button type="submit" class="btn upload__btn main-btn">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>Upload</span>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

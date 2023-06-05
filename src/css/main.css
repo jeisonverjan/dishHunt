@@ -1,0 +1,143 @@
+@import url("./header.css");
+@import url("./recipe-box.css");
+@import url("./searchResults.css");
+@import url("./elements.css");
+@import url("./addRecipe.css");
+
+:root {
+  font-family: Rokkitt, serif;
+  --main-color: #63a4ff;
+  --second-color: #83eaf1;
+  --shadow: rgba(148, 147, 147, 0.404);
+  --dark-color: #000;
+  --light-color: rgb(222, 240, 240, 0.8);
+  --basic-text: #fff;
+  --danger: #f44336;
+  --success: #28a745;
+  --background-main: linear-gradient(
+    315deg,
+    var(--main-color) 0%,
+    var(--second-color) 74%
+  );
+  --background-second: linear-gradient(
+    315deg,
+    var(--light-color) 0%,
+    rgba(217, 223, 234, 0.8) 74%
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background: var(--background-main);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main-container {
+  width: 80%;
+  font-size: 3rem;
+  margin: 0 auto;
+  background: var(--background-second);
+  box-shadow: 0.5em 0.2em 1em 0.3em var(--second-color);
+  border-radius: 0em 0em 0.5em 0.5em;
+}
+i {
+  color: var(--main-color);
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--dark-color);
+}
+h2{
+  text-align: center;
+}
+.bold{
+  font-weight: bold;
+}
+
+.content-container {
+  display: flex;
+}
+
+.search-container {
+  background-color: var(--light-color);
+  width: 40%;
+}
+
+@media (max-width: 1300px) {
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    padding: 0.5em;
+    justify-content: space-evenly;
+  }
+  .header-logo {
+    margin-left: 0;
+  }
+  .add-recipe-window {
+    position: absolute;
+    top: 70%;
+    width: 80rem;
+  }
+  .upload{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    justify-content: space-around;
+    padding-bottom: 0;
+  }
+  .content-container {
+    flex-direction: column;
+  }
+  .search-container {
+    width: 100%;
+  }
+  .recipe-container {
+    width: 100%;
+  }
+  .add-recipe-window {
+    width: 60rem;
+    top: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    justify-content: space-around;
+    gap: 0.5em;
+  }
+  .recipe-ingredients-list{
+    column-count: 1;
+  }
+  .bookmarks{
+    left: 0;
+    font-size: 2.3rem;
+  }
+  .add-recipe-window {
+    width: 50rem;
+    
+  }
+  .upload__column {
+    grid-template-columns:1fr;
+  }
+}
