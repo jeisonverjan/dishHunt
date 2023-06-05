@@ -5,10 +5,10 @@ import resultsView from "./views/resultsView"
 import paginationView from "./views/paginationView"
 import bookmarksView from "./views/bookmarksView"
 import addRecipeView from "./views/addRecipeView"
-import { CLOSE_WINDOW_SEC } from "./config"
+import { CLOSE_WINDOW_SEC, RENDER_FORM_SEC } from "./config"
 
 const controlRecipe = async () => {
-    
+
     try {
         //find recipe ID
         const id = window.location.hash.slice(1)
@@ -19,10 +19,10 @@ const controlRecipe = async () => {
 
         //update result view to mark selected search result
         resultsView.update(module.getSearchResultPage())
-                
+
         //load recipe
         await module.loadRecipe(id)
-        
+
         //render recipe
         recipeView.render(module.state.recipe)
         //scroll up
@@ -38,14 +38,14 @@ const controlRecipe = async () => {
 
 const controlSearchResults = async () => {
     try {
-        
+
         //get data from search input
         const query = searchView.getQuery()
-        if(!query) return
-        
+        if (!query) return
+
         //Show spinner
         resultsView.renderSpinner()
-        
+
         //search into the API
         await module.loadSearchResults(query)
 
@@ -61,7 +61,7 @@ const controlSearchResults = async () => {
     }
 }
 
-const controlPagination = (goToPage) =>{
+const controlPagination = (goToPage) => {
     //Show spinner
     resultsView.renderSpinner()
     //render NEW results on the page
@@ -81,10 +81,10 @@ const controlServings = (newServings) => {
 const controlAddBookmark = () => {
     try {
         // Add or remove bookmark
-        if(!module.state.recipe.bookmarked) 
+        if (!module.state.recipe.bookmarked)
             module.addBookmark(module.state.recipe)
         else module.removeBookmark(module.state.recipe.id)
-        
+
         // Update recipe box
         recipeView.update(module.state.recipe)
 
@@ -94,7 +94,7 @@ const controlAddBookmark = () => {
         bookmarksView.renderMessage(error)
         console.error(error)
     }
-    
+
 }
 
 const controlBookmarksRender = () => {
@@ -108,9 +108,10 @@ const controlRecipeUpload = async (newRecipe) => {
 
         //Upload the new recipe data
         await module.uploadRecipe(newRecipe)
-        
+
         //render NEW recipe
         recipeView.render(module.state.recipe)
+
         //scrollUp
         recipeView.scrollUp()
 
@@ -118,7 +119,7 @@ const controlRecipeUpload = async (newRecipe) => {
         bookmarksView.render(module.state.bookmarks)
 
         //success Message
-        addRecipeView.renderMessage(undefined,true)
+        addRecipeView.renderMessage(undefined, true)
 
         // Change ID in URL
         window.history.pushState(null, '', `#${module.state.recipe.id}`);
@@ -127,6 +128,8 @@ const controlRecipeUpload = async (newRecipe) => {
         setTimeout(() => {
             addRecipeView.toggleHiddenClass()
         }, CLOSE_WINDOW_SEC * 1000);
+
+
     } catch (error) {
         alert(error)
     }
